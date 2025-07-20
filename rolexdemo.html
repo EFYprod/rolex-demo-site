@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon Watches | Timeless Luxury</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.5px;
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .hero-section {
+            background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.2)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/51a11ffd-0e57-48ca-9120-d8b1647c091e.png') no-repeat center center;
+            background-size: cover;
+            height: 90vh;
+        }
+        
+        .watch-highlight {
+            transition: all 0.5s ease;
+        }
+        
+        .watch-highlight:hover {
+            transform: scale(1.03);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #000;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .cart-item-animation {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+
+            <div class="flex items-center">
+                <button id="cartBtn" class="relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span id="cartCount" class="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                </button>
+                <button class="md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section flex items-center text-white relative">
+        <div class="max-w-7xl mx-auto px-6 w-full">
+            <div class="max-w-md">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">Timeless Elegance</h1>
+                <p class="text-lg mb-8 leading-relaxed">Precision crafted watches that transcend trends, designed to be worn for generations.</p>
+                <a href="#featured" class="inline-block px-8 py-3 bg-transparent border border-white hover:bg-white hover:text-black transition duration-300">Explore Collections</a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section id="featured" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Watches</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Our signature collection represents the pinnacle of watchmaking excellence.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Rolex Submariner -->
+                <div class="product-card watch-highlight">
+                    <div class="mb-4 overflow-hidden rounded-sm">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7f98c01a-9bab-403c-ac09-c384a19295c0.png" alt="Rolex Submariner luxury dive watch with black dial and stainless steel bracelet" class="w-full h-auto object-cover transition duration-500 hover:scale-105">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Rolex Submariner</h3>
+                    <p class="text-gray-600 mb-4">Iconic diver's watch with Date</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-medium">$9,550</span>
+                        <button class="buy-now px-4 py-2 bg-black text-white rounded-sm hover:bg-gray-800 transition duration-300" data-id="101" data-name="Rolex Submariner" data-price="9550" onclick="showCheckoutModal()">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Rolex Daytona -->
+                <div class="product-card watch-highlight">
+                    <div class="mb-4 overflow-hidden rounded-sm">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/228edb77-1416-462a-a368-0d72218054c2.png" alt="Rolex Daytona chronograph watch with black dial and ceramic bezel" class="w-full h-auto object-cover transition duration-500 hover:scale-105">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Rolex Daytona</h3>
+                    <p class="text-gray-600 mb-4">Premium racing chronograph</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-medium">$14,950</span>
+                        <button class="buy-now px-4 py-2 bg-black text-white rounded-sm hover:bg-gray-800 transition duration-300" data-id="102" data-name="Rolex Daytona" data-price="14950" onclick="showCheckoutModal()">Buy Now</button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card watch-highlight">
+                    <div class="mb-4 overflow-hidden rounded-sm">
+                       <img src="data:image/jpeg;base64,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">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Diver's Edition</h3>
+                    <p class="text-gray-600 mb-4">Engineered for depth and durability</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-medium">$3,200</span>
+                        <button class="add-to-cart px-4 py-2 bg-black text-white rounded-sm hover:bg-gray-800 transition duration-300" data-id="2" data-name="Diver's Edition" data-price="3200">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card watch-highlight">
+                    <div class="mb-4 overflow-hidden rounded-sm">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f29b4bab-2596-4538-b097-e5a98833cbc6.png" alt="Vintage-inspired watch with domed crystal and leather strap" class="w-full h-auto object-cover transition duration-500 hover:scale-105">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Heritage Collection</h3>
+                    <p class="text-gray-600 mb-4">Classic aesthetics, modern mechanics</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-medium">$2,450</span>
+                        <button class="add-to-cart px-4 py-2 bg-black text-white rounded-sm hover:bg-gray-800 transition duration-300" data-id="3" data-name="Heritage Collection" data-price="2450">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9432ce23-26c3-426c-8167-8e89a25c4811.png" alt="Watchmaker using precision tools to assemble mechanical movement under magnifying glass" class="w-full h-auto rounded-sm shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6">Our Story</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">Founded in 1992, Horizon combines Swiss precision with Scandinavian design philosophy. Each timepiece is assembled by master watchmakers in our Geneva atelier.</p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">We source only the finest materials - from sapphire crystals to hand-stitched leather straps - ensuring exceptional quality and longevity.</p>
+                    <a href="#" class="inline-block px-6 py-3 border border-black rounded-sm hover:bg-black hover:text-white transition duration-300">Discover More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Client Experiences</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 p-6 rounded-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/875208cf-034a-4bbc-875f-23079c19779d.png" alt="Portrait of satisfied customer David Sinclair, tech executive" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">David Sinclair</h4>
+                            <p class="text-sm text-gray-500">Tech Executive</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The Chronograph Series perfectly complements both my business attire and weekend wear. Its precision is matched only by its beauty."</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 p-6 rounded-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1243102e-4118-4ef8-88e0-17f993cb7422.png" alt="Portrait of satisfied customer Maria Rodriguez, fashion editor" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Maria Rodriguez</h4>
+                            <p class="text-sm text-gray-500">Fashion Editor</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"I collect watches and Horizon's Heritage piece is among my favorites. The craftsmanship is exceptional."</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 p-6 rounded-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5322d3b0-4863-4258-9d4a-21f4336d5d90.png" alt="Portrait of satisfied customer James Tanaka, professional diver" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">James Tanaka</h4>
+                            <p class="text-sm text-gray-500">Professional Diver</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The Diver's Edition has survived multiple expeditions with me. Reliability meets elegance in this masterpiece."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white w-full max-w-md mx-4 max-h-[80vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-bold">Your Cart</h3>
+                    <button id="closeCart" class="text-2xl">&times;</button>
+                </div>
+                <div id="cartItems" class="divide-y">
+                    <!-- Cart items will be dynamically inserted here -->
+                </div>
+                <div class="mt-6 pt-4 border-t">
+                    <div class="flex justify-between mb-4">
+                        <span>Subtotal</span>
+                        <span id="cartTotal">$0</span>
+                    </div>
+                    <button class="w-full py-3 bg-black text-white rounded-sm hover:bg-gray-800 transition duration-300">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Collections</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">Men's Watches</a></li>
+                        <li><a href="#" class="hover:underline">Women's Watches</a></li>
+                        <li><a href="#" class="hover:underline">Limited Editions</a></li>
+                        <li><a href="#" class="hover:underline">Bestsellers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">Our Story</a></li>
+                        <li><a href="#" class="hover:underline">Sustainability</a></li>
+                        <li><a href="#" class="hover:underline">Careers</a></li>
+                        <li><a href="#" class="hover:underline">Press</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">FAQ</a></li>
+                        <li><a href="#" class="hover:underline">Shipping</a></li>
+                        <li><a href="#" class="hover:underline">Returns</a></li>
+                        <li><a href="#" class="hover:underline">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0e042882-15cd-4a33-b308-1ec9a7885bee.png" alt="Instagram social media icon" class="w-8 h-8"></a>
+                        <a href="#"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6d6437b2-c13d-476e-8009-60d462ea3f0e.png" alt="Facebook social media icon" class="w-8 h-8"></a>
+                        <a href="#"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8e412eba-dd01-4369-bed2-28060a1e0a68.png" alt="Twitter social media icon" class="w-8 h-8"></a>
+                        <a href="#"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a8a5f835-5b18-48c0-be67-afba4e80884b.png" alt="Pinterest social media icon" class="w-8 h-8"></a>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-sm">Subscribe to our newsletter</p>
+                        <form class="mt-2 flex">
+                            <input type="email" placeholder="Your email" class="px-3 py-2 w-full text-black">
+                            <button type="submit" class="bg-white text-black px-3 py-2 hover:bg-gray-200 transition duration-300">→</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Horizon Watches. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white w-full max-w-md mx-4 rounded-lg overflow-hidden">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold">Complete Your Purchase</h3>
+                    <button onclick="hideCheckoutModal()" class="text-2xl">&times;</button>
+                </div>
+                <form id="checkoutForm">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2">Card Number</label>
+                        <input type="text" class="w-full px-3 py-2 border rounded" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-gray-700 mb-2">Expiry Date</label>
+                            <input type="text" class="w-full px-3 py-2 border rounded" placeholder="MM/YY" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">CVV</label>
+                            <input type="text" class="w-full px-3 py-2 border rounded" placeholder="123" required>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 mb-2">Name on Card</label>
+                        <input type="text" class="w-full px-3 py-2 border rounded" placeholder="John Smith" required>
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-black text-white rounded hover:bg-gray-800 transition duration-300">
+                        Pay $<span id="checkoutAmount">0</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Shopping Cart Functionality
+        let cart = [];
+
+        // Checkout Modal Functions
+        function showCheckoutModal() {
+            const checkoutModal = document.getElementById('checkoutModal');
+            checkoutModal.classList.remove('hidden');
+        }
+
+        function hideCheckoutModal() {
+            const checkoutModal = document.getElementById('checkoutModal');
+            checkoutModal.classList.add('hidden');
+        }
+
+        // Form submission handler
+        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Payment processed successfully!');
+            hideCheckoutModal();
+        });
+        
+        // DOM Elements
+        const cartBtn = document.getElementById('cartBtn');
+        const cartModal = document.getElementById('cartModal');
+        const closeCart = document.getElementById('closeCart');
+        const cartItems = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
+        const cartCount = document.getElementById('cartCount');
+        const addToCartBtns = document.querySelectorAll('.add-to-cart');
+        
+        // Event Listeners
+        cartBtn.addEventListener('click', toggleCart);
+        closeCart.addEventListener('click', toggleCart);
+        
+        addToCartBtns.forEach(btn => {
+            btn.addEventListener('click', addToCart);
+        });
+        
+        // Functions
+        function toggleCart() {
+            cartModal.classList.toggle('hidden');
+            if (!cartModal.classList.contains('hidden')) {
+                renderCart();
+            }
+        }
+        
+        function addToCart(e) {
+            const btn = e.target;
+            const id = btn.getAttribute('data-id');
+            const name = btn.getAttribute('data-name');
+            const price = parseInt(btn.getAttribute('data-price'));
+            
+            // Check if item already in cart
+            const existingItem = cart.find(item => item.id === id);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id,
+                    name,
+                    price,
+                    quantity: 1
+                });
+            }
+            
+            updateCartCount();
+            
+            // Visual feedback
+            btn.textContent = 'Added!';
+            btn.style.backgroundColor = '#5cb85c';
+            setTimeout(() => {
+                btn.textContent = 'Add to Cart';
+                btn.style.backgroundColor = '';
+            }, 1000);
+        }
+        
+        function updateCartCount() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = count;
+            if (count > 0) {
+                cartCount.classList.remove('hidden');
+            } else {
+                cartCount.classList.add('hidden');
+            }
+        }
+        
+        function renderCart() {
+            cartItems.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="py-4 text-center">Your cart is empty</p>';
+                cartTotal.textContent = '$0';
+                return;
+            }
+            
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'py-4 cart-item-animation';
+                cartItem.innerHTML = `
+                    <div class="flex justify-between">
+                        <div>
+                            <h4 class="font-medium">${item.name}</h4>
+                            <p class="text-sm text-gray-600">$${item.price}</p>
+                        </div>
+                        <div class="flex items-center">
+                            <button class="decrease-qty px-2" data-id="${item.id}">-</button>
+                            <span class="mx-2">${item.quantity}</span>
+                            <button class="increase-qty px-2" data-id="${item.id}">+</button>
+                            <span class="ml-4 w-16 text-right">$${itemTotal}</span>
+                            <button class="remove-item ml-2 text-red-500" data-id="${item.id}">×</button>
+                        </div>
+                    </div>
+                `;
+                
+                cartItems.appendChild(cartItem);
+            });
+            
+            cartTotal.textContent = `$${total}`;
+            
+            // Add event listeners to new buttons
+            document.querySelectorAll('.increase-qty').forEach(btn => {
+                btn.addEventListener('click', increaseQuantity);
+            });
+            
+            document.querySelectorAll('.decrease-qty').forEach(btn => {
+                btn.addEventListener('click', decreaseQuantity);
+            });
+            
+            document.querySelectorAll('.remove-item').forEach(btn => {
+                btn.addEventListener('click', removeItem);
+            });
+        }
+        
+        function increaseQuantity(e) {
+            const id = e.target.getAttribute('data-id');
+            const item = cart.find(item => item.id === id);
+            item.quantity += 1;
+            updateCartCount();
+            renderCart();
+        }
+        
+        function decreaseQuantity(e) {
+            const id = e.target.getAttribute('data-id');
+            const item = cart.find(item => item.id === id);
+            
+            if (item.quantity > 1) {
+                item.quantity -= 1;
+            }
+            
+            updateCartCount();
+            renderCart();
+        }
+        
+        function removeItem(e) {
+            const id = e.target.getAttribute('data-id');
+            cart = cart.filter(item => item.id !== id);
+            updateCartCount();
+            renderCart();
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
